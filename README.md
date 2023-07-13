@@ -16,10 +16,9 @@ Utilize a API da Reservoir para consolidar dados sobre coleções de NFTs no seu
 
 - Utilize um framework backend de sua escolha (sugestão: Laravel ou nest.js);
 - Utilize um banco de dados de sua preferência (sugestão: MySQL ou PostgresSQL);
-- Implemente um endpoint `POST /collection` que cadastra uma coleção a ser sincronizada;
+- Implemente um endpoint `POST /collection` que cadastra uma coleção a ser sincronizada posteriormente na rota `POST /sync`;
   - A coleção é identificada pelo seu `id` (consultar retorno da API);
-- Implemente um endpoint `POST /sync` que dispara a atualização de dados;
-  - Os demais dados das coleções devem vir da API da Reservoir;
+- Implemente um endpoint `POST /sync` que dispara a atualização de dados de todas as coleções cadastradas;
 - Implemente um endpoint `GET /collection/:id` que retorna os dados de uma coleção específica;
 - Implemente um endpoint `GET /collection` que retorna os seguintes dados:
   - Média dos `floorSaleChange` de 30 dias das coleções que estão no seu banco;
@@ -36,6 +35,7 @@ Utilize a API da Reservoir para consolidar dados sobre coleções de NFTs no seu
 ## Observações
 
 Os dados não precisam ser atualizados em tempo real, mas é importante que a aplicação seja capaz de atualizar os dados quando requisitado. Também não é necessária a implementação de autenticação, todas as rotas podem ser públicas a não ser que você queira fazer o requisito opcional.
+Não é necessário guardar o histórico de atualizações, apenas o dado mais recente.
 
 Em caso de dúvidas sobre a implementação entre em contato via e-mail com
 <a href="mailto:yudi@khizadao.com">yudi@khizadao.com</a> ou entre em nosso servidor do Discord <a href="https://discord.gg/9VAqhxp6K6">clicando aqui</a>.
